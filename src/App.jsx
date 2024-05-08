@@ -22,8 +22,8 @@ function App() {
       generateData();
     }
     else{
-      console.log(data)
-      const res = data.filter((item)=>(item.name.official.toLowerCase()==(country.current)));
+      let len = country.current.length;
+      const res = data.filter((item)=>(item.name.official.toLowerCase().slice(0,len+1).includes(country.current)));
       setData(res);
     }
  
